@@ -61,12 +61,137 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.npm2dot">module npm2dot</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm2dot.npm2dot">
+            function <span class="apidocSignatureSpan"></span>npm2dot
+            <span class="apidocSignatureSpan">(textContent, outputStream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm2dot.toString">
+            function <span class="apidocSignatureSpan">npm2dot.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.npm2dot.toString">module npm2dot.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm2dot.toString.toString">
+            function <span class="apidocSignatureSpan">npm2dot.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.npm2dot" id="apidoc.module.npm2dot">module npm2dot</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.npm2dot.npm2dot" id="apidoc.element.npm2dot.npm2dot">
+        function <span class="apidocSignatureSpan"></span>npm2dot
+        <span class="apidocSignatureSpan">(textContent, outputStream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">npm2dot = function (textContent, outputStream) {
+
+  if (typeof textContent !== &#x22;string&#x22;) {
+    throw new Error(&#x27;Param jsonTree must be a string&#x27;);
+  }
+
+  if (!outputStream) {
+    outputStream = process.stdout;
+  }
+
+  // generate id for each module
+  var id = 0;
+  var tree = JSON.parse(textContent);
+
+
+<span class="apidocCodeCommentSpan">  /**
+   * recursive
+   *
+   * @param tree {Object}
+   * @param prev {String}
+   * @param level {Number}
+   *
+   */
+</span>  function show(tree, prev, level) {
+    level = level + 1;
+
+    if (tree) {
+      //FIXME: prototype check
+      for (var i in tree.dependencies) {
+        if (tree.dependencies.hasOwnProperty(i)) {
+          id++;
+          var nodeName = NODE_NAME_PREFIX + id;
+          var child = i + &#x27;@&#x27; + tree.dependencies[i].version;
+
+          outputStream.write(format(&#x27; &#x22;%s&#x22; -&#x3e; &#x22;%s&#x22;%s&#x27;, prev, nodeName, EOL));
+          outputStream.write(format(&#x27; &#x22;%s&#x22;[label=&#x22;%s&#x22;,style=&#x22;filled&#x22;,fillcolor=&#x22;%d 1 1&#x22;]%s&#x27;, nodeName, child, level / 15, EOL));
+
+          show(tree.dependencies[i], nodeName, level);
+        }
+
+      }
+    }
+  }
+
+  outputStream.write(format(&#x27;digraph{%s&#x27;, EOL));
+  outputStream.write(format(&#x27; root=&#x22;%s@%s&#x22;%s&#x27;, tree.name, tree.version, EOL));
+  show(tree, tree.name + &#x22;@&#x22; + tree.version, 0);
+  outputStream.write(format(&#x27;}%s&#x27;, EOL));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.npm2dot.toString" id="apidoc.element.npm2dot.toString">
+        function <span class="apidocSignatureSpan">npm2dot.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.npm2dot.toString" id="apidoc.module.npm2dot.toString">module npm2dot.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.npm2dot.toString.toString" id="apidoc.element.npm2dot.toString.toString">
+        function <span class="apidocSignatureSpan">npm2dot.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

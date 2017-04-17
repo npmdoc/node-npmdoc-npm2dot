@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/wyvernnot/npm2dot#readme"
-
-    >npm2dot (v1.0.2)</a>
+    <a href="https://github.com/wyvernnot/npm2dot#readme">npm2dot (v1.0.2)</a>
 </h1>
 <h4>convert npm dependency list to graphviz format</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.npm2dot">module npm2dot</a><ol>
 
@@ -109,8 +102,8 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">npm2dot = function (textContent, outputStream) {
 
-  if (typeof textContent !== &#x22;string&#x22;) {
-    throw new Error(&#x27;Param jsonTree must be a string&#x27;);
+  if (typeof textContent !== "string") {
+    throw new Error('Param jsonTree must be a string');
   }
 
   if (!outputStream) {
@@ -139,10 +132,10 @@
         if (tree.dependencies.hasOwnProperty(i)) {
           id++;
           var nodeName = NODE_NAME_PREFIX + id;
-          var child = i + &#x27;@&#x27; + tree.dependencies[i].version;
+          var child = i + '@' + tree.dependencies[i].version;
 
-          outputStream.write(format(&#x27; &#x22;%s&#x22; -&#x3e; &#x22;%s&#x22;%s&#x27;, prev, nodeName, EOL));
-          outputStream.write(format(&#x27; &#x22;%s&#x22;[label=&#x22;%s&#x22;,style=&#x22;filled&#x22;,fillcolor=&#x22;%d 1 1&#x22;]%s&#x27;, nodeName, child, level / 15, EOL));
+          outputStream.write(format(' "%s" -&gt; "%s"%s', prev, nodeName, EOL));
+          outputStream.write(format(' "%s"[label="%s",style="filled",fillcolor="%d 1 1"]%s', nodeName, child, level / 15, EOL));
 
           show(tree.dependencies[i], nodeName, level);
         }
@@ -151,10 +144,10 @@
     }
   }
 
-  outputStream.write(format(&#x27;digraph{%s&#x27;, EOL));
-  outputStream.write(format(&#x27; root=&#x22;%s@%s&#x22;%s&#x27;, tree.name, tree.version, EOL));
-  show(tree, tree.name + &#x22;@&#x22; + tree.version, 0);
-  outputStream.write(format(&#x27;}%s&#x27;, EOL));
+  outputStream.write(format('digraph{%s', EOL));
+  outputStream.write(format(' root="%s@%s"%s', tree.name, tree.version, EOL));
+  show(tree, tree.name + "@" + tree.version, 0);
+  outputStream.write(format('}%s', EOL));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -201,3 +194,4 @@
     ]
 </div>
 </div>
+</body></html>
