@@ -1,9 +1,11 @@
 # api documentation for  [npm2dot (v1.0.2)](https://github.com/wyvernnot/npm2dot#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-npm2dot.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-npm2dot) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-npm2dot.svg)](https://travis-ci.org/npmdoc/node-npmdoc-npm2dot)
 #### convert npm dependency list to graphviz format
 
-[![NPM](https://nodei.co/npm/npm2dot.png?downloads=true)](https://www.npmjs.com/package/npm2dot)
+[![NPM](https://nodei.co/npm/npm2dot.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/npm2dot)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-npm2dot/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-npm2dot_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-npm2dot/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-npm2dot/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-npm2dot/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-npm2dot/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-npm2dot/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-npm2dot/build/screenCapture.npmPackageListing.svg)
 
@@ -44,14 +46,12 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "wyvernnot",
-            "email": "wyvernnot@gmail.com"
+            "name": "wyvernnot"
         }
     ],
     "name": "npm2dot",
     "optionalDependencies": {},
     "preferGlobal": true,
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/wyvernnot/npm2dot.git"
@@ -63,16 +63,6 @@
     "version": "1.0.2"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module npm2dot](#apidoc.module.npm2dot)
-
-
-
-# <a name="apidoc.module.npm2dot"></a>[module npm2dot](#apidoc.module.npm2dot)
 
 
 
