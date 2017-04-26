@@ -1,4 +1,7 @@
-# api documentation for  [npm2dot (v1.0.2)](https://github.com/wyvernnot/npm2dot#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-npm2dot.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-npm2dot) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-npm2dot.svg)](https://travis-ci.org/npmdoc/node-npmdoc-npm2dot)
+# npmdoc-npm2dot
+
+#### basic api documentation for  [npm2dot (v1.0.2)](https://github.com/wyvernnot/npm2dot#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-npm2dot.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-npm2dot) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-npm2dot.svg)](https://travis-ci.org/npmdoc/node-npmdoc-npm2dot)
+
 #### convert npm dependency list to graphviz format
 
 [![NPM](https://nodei.co/npm/npm2dot.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/npm2dot)
